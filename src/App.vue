@@ -1,32 +1,41 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+  
+   <el-container>
+        <el-header>
+            <el-menu router :default-active="activeIndex2" class="el-menu-demo" mode="horizontal" background-color="#545c64" text-color="#fff" active-text-color="#ffd04b">
+                <el-menu-item index="/home">首页</el-menu-item>
+                <el-menu-item index="/class">课程</el-menu-item>
+                <el-menu-item index="/register" style="float:right">注册</el-menu-item>
+                <el-menu-item index="/login" style="float:right">登录</el-menu-item>
+            </el-menu>
+        </el-header>
+        <el-main>
+            <router-view></router-view>
+        </el-main>
+        <el-footer>Footer</el-footer>
+    </el-container>
+  
 </template>
 
+<script>
+
+
+export default {
+  name: 'app',
+  data() {
+        return {
+            activeIndex2: '1'
+        };
+    },
+    methods: {
+
+    },
+  components: {
+   
+  }
+};
+</script>
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
 
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
 </style>
